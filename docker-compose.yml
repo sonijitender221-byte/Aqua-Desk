@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: aquadesk-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: aquadesk
+      POSTGRES_PASSWORD: aquadesk
+      POSTGRES_DB: aquadesk
+    ports:
+      - "5432:5432"
+    volumes:
+      - aquadesk_pgdata:/var/lib/postgresql/data
+
+volumes:
+  aquadesk_pgdata:

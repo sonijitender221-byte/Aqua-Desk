@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) { return <div className="card p-8 text-center"><h2 className="text-xl font-black text-slate-950">Something went wrong</h2><p className="mt-2 text-sm text-slate-500">{error.message || "The page could not be loaded."}</p><button className="btn-primary mt-5" onClick={reset}>Try again</button></div>; }
